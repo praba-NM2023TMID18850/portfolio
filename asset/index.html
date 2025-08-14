@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Portfolio</title>
+  <link rel="stylesheet" href="style1.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    nav ul li a:hover,
+    .btn:hover,
+    .project-btn:hover {
+      background-color: #ff6600;
+      color: white;
+      transition: 0.3s;
+    }
+    .profile-img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+      gap: 20px;
+      border: 3px solid #ff6600;
+    }
+    .social-icons a {
+      margin: 0 10px;
+      font-size: 1.5rem;
+      color: #333;
+    }
+    .social-icons a:hover {
+      color: #ff6600;
+    }
+  </style>
+  
+</head>
+<body>
+  <header>
+    <nav>
+  <h1>Praba</h1>
+  <div class="nav-right">
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="btn">Hire Me</a>
+  </div>
+</nav>
+
+  </header>
+
+   <section class="hero" id="home" style="text-align: center;">
+    <!-- <img src="profile.jpg" alt="Profile Picture" class="profile-img"> -->
+    <div class="content">
+      <h2>I'm a Front-End Developer</h2>
+      <p>I build responsive and interactive websites using HTML, CSS, and JavaScript.</p>
+      <div class="hero-buttons align-center">
+        <a href="#contact" class="btn">Hire Me</a>
+        <a href="#projects" class="btn-outline">My Portfolio</a>
+      </div>
+    </div>
+  </section>
+  <section class="about" id="about">
+  <h2>About Me</h2>
+  <p class="tagline">"Turning ideas into visually appealing and user-friendly digital experiences"</p>
+  
+  <p>
+    I'm a creative and detail-oriented <strong>Front-End Developer</strong> with a strong foundation in 
+    <strong>HTML</strong>, <strong>CSS</strong>, and <strong>JavaScript</strong>. I have hands-on experience in 
+    building responsive, mobile-first web applications and love bringing innovative ideas to life.
+  </p>
+  <p>
+    I specialize in designing <em>modern, pixel-perfect interfaces</em> and optimizing user experience through 
+    clean code and best practices. My toolkit includes <strong>React</strong> for dynamic UI development, and 
+    I stay up-to-date with the latest front-end trends to keep my work fresh and innovative.
+  </p>
+  <p>
+    Apart from coding, I value <strong>problem-solving</strong>, <strong>team collaboration</strong>, and 
+    <strong>continuous learning</strong>. My goal is to create websites that not only look great but also 
+    deliver smooth and engaging user interactions.
+  </p>
+
+  <a href="resume/myresume.docx" class="btn resume-btn" download>📄 Download Resume</a>
+
+  <h3>My Skills</h3>
+  <div class="icon-skills">
+    <div class="skill-icon">
+      <i class="fab fa-html5"></i>
+      <span>HTML</span>
+    </div>
+    <div class="skill-icon">
+      <i class="fab fa-css3-alt"></i>
+      <span>CSS</span>
+    </div>
+    <div class="skill-icon">
+      <i class="fab fa-js-square"></i>
+      <span>JavaScript</span>
+    </div>
+    <div class="skill-icon">
+      <i class="fab fa-react"></i>
+      <span>React</span>
+    </div>
+    <div class="skill-icon">
+      <i class="fas fa-mobile-alt"></i>
+      <span>Responsive Design</span>
+    </div>
+  </div>
+</section>
+
+
+<section class="projects" id="projects">
+  <h2>My Projects</h2>
+  <p class="projects-intro">
+    Here are some of the projects I’ve worked on, showcasing my skills in web design, responsive layouts, and user-friendly interface development.
+  </p>
+
+  <div class="project-list">
+
+    <div class="project-card">
+      <img src="port.jpg" alt="Portfolio Website">
+      <h3>Portfolio Website</h3>
+      <p>
+        A personal website designed to showcase my profile, skills, and projects. Built using <strong>HTML</strong> and <strong>CSS</strong> with a fully responsive design to ensure a smooth experience across devices.
+      </p>
+      <a href="#" class="project-btn">View Project</a>
+    </div>
+
+    <div class="project-card">
+      <img src="sportsblog.png" alt="Sports Blog">
+      <h3>Sports Blog</h3>
+      <p>
+        A modern blog-style platform for publishing sports news, match updates, and highlights. Developed with <strong>HTML</strong> and <strong>CSS</strong>, optimized for both desktop and mobile users.
+      </p>
+      <a href="#" class="project-btn">View Project</a>
+    </div>
+
+    <div class="project-card">
+      <img src="ticket.png" alt="Ticket Booking UI">
+      <h3>Ticket Booking System</h3>
+      <p>
+        A clean, static UI concept for booking movie and event tickets with seat selection functionality. Designed using <strong>HTML</strong> and <strong>CSS</strong> focusing on clarity and ease of navigation.
+      </p>
+      <a href="#" class="project-btn">View Project</a>
+    </div>
+
+    <div class="project-card">
+      <img src="parlour.png" alt="Beauty Parlour Website">
+      <h3>Beauty Parlour Website</h3>
+      <p>
+        A fully responsive beauty parlour website built using <strong>React</strong> and <strong>TypeScript</strong>. Features a modern layout, service showcase, and mobile-friendly design.
+      </p>
+      <a href="#" class="project-btn">View Project</a>
+    </div>
+
+  </div>
+</section>
+
+
+ <section id="contact" class="contact">
+  <h2>Contact Me</h2>
+  <p>Have a question or want to work together? Send me a message!</p>
+
+  <form action="https://app.getform.io/forms" method="POST" class="contact-form">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" placeholder="Your Message" required rows="5"></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+
+  <div class="contact-links">
+    <a href="mailto:prabaramesh54@gmail.com" target="_blank">📧 Email</a>
+    <a href="https://linkedin.com/in/praba-ramesh-03415233b" target="_blank">💼 LinkedIn</a>
+    <a href="https://github.com/praba-NM2023TMID18850" target="_blank">💻 GitHub</a>
+  </div>
+</section>
+
+</body>
+</html>
