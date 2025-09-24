@@ -7,6 +7,40 @@ document.querySelectorAll('nav ul li a').forEach(link => {
   });
 });
 
+// Circular progress animation
+const skillCircles = document.querySelectorAll(".skill-circle");
+
+function animateCircles() {
+  skillCircles.forEach(circle => {
+    const circleTop = circle.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
+    if(circleTop < windowHeight - 50 && !circle.classList.contains("animated")){
+      const progress = circle.querySelector(".progress");
+      const percent = circle.getAttribute("data-percent");
+      const radius = progress.r.baseVal.value;
+      const circumference = 2 * Math.PI * radius;
+      const offset = circumference - (percent / 100 * circumference);
+      progress.style.strokeDashoffset = offset;
+
+      // Animate number
+      const number = circle.querySelector("span");
+      let count = 0;
+      const interval = setInterval(() => {
+        if(count < percent){
+          count++;
+          number.textContent = count + "%";
+        } else {
+          clearInterval(interval);
+        }
+      }, 15);
+
+      circle.classList.add("animated");
+    }
+  });
+}
+
+window.addEventListener("scroll", animateCircles);
+window.addEventListener("load", animateCircles);
 
 
 c// Rotating titles
