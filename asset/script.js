@@ -251,6 +251,58 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
+// Counter Animation for About Section
+function animateCounters() {
+  const counters = document.querySelectorAll('.stat-item');
+  
+  counters.forEach(counter => {
+    const target = parseInt(counter.getAttribute('data-count'));
+    const numberElement = counter.querySelector('.stat-number');
+    const rect = counter.getBoundingClientRect();
+    
+    if (rect.top < window.innerHeight && !counter.classList.contains('counted')) {
+      let count = 0;
+      const increment = target / 50;
+      
+      const updateCounter = () => {
+        if (count < target) {
+          count += increment;
+          numberElement.textContent = Math.ceil(count);
+          requestAnimationFrame(updateCounter);
+        } else {
+          numberElement.textContent = target;
+        }
+      };
+      
+      updateCounter();
+      counter.classList.add('counted');
+    }
+  });
+}
+
+// Badge hover effects
+document.querySelectorAll('.badge').forEach(badge => {
+  badge.addEventListener('mouseenter', () => {
+    badge.style.transform = 'translateY(-5px) scale(1.1)';
+    badge.style.background = 'rgba(99, 102, 241, 0.3)';
+  });
+  
+  badge.addEventListener('mouseleave', () => {
+    badge.style.transform = 'translateY(0) scale(1)';
+    badge.style.background = 'rgba(255, 255, 255, 0.1)';
+  });
+});
+
+// Skill tag interactions
+document.querySelectorAll('.skill-tag').forEach(tag => {
+  tag.addEventListener('click', () => {
+    tag.style.transform = 'scale(0.95)';
+    setTimeout(() => {
+      tag.style.transform = 'scale(1)';
+    }, 150);
+  });
+});
+
 // Initialize animations on load
 window.addEventListener('load', () => {
   // Trigger initial animations
@@ -262,4 +314,10 @@ window.addEventListener('load', () => {
     item.style.animationDelay = `${index * 0.1}s`;
     item.style.animation = 'slideUp 0.6s ease forwards';
   });
+  
+  // Start counter animation
+  animateCounters();
 });
+
+// Add scroll listener for counter animation
+window.addEventListener('scroll', animateCounters);
